@@ -6,35 +6,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart</title>
     <style>
-        div{
-            display: grid;grid-template-columns: 1 auto;margin: auto;
+        #products{
+          width: 35%; border: 0px solid green;display: grid;grid-template-columns: repeat(1,1fr);
+          gap: 30px;margin: auto;
+          
         }
-        h1{
-            text-align: center;
+        #products>div{
+          width: 100%;
+        }
+        #products>div>img{
+          width: 100%;
         }
     </style>
 </head>
 <body>
-    <h1>Cart</h1>
+    <!-- <h1>Cart</h1> -->
+    <div id="products"></div>
 </body>
 </html>
 <script>
-    var cart=JSON.parse(localStorage.getItem('cart')) || [];
+    var cart=JSON.parse(localStorage.getItem('cartItem')) || [];
+// console.log(cart);
+    cart.reduce(function(acc,ele){
 
-    display(cart);
+    })
+    
     function display(cart){
         cart.forEach(function(elem){
-            var box=document.createElement('div')
-
-            var image=document.createElement('img');
-            image.setAttribute("src",elem.image_url)
-            var productname=document.createElement('h5');
+            var box=document.createElement('div');
+            var image=document.createElement("img");
+            image.setAttribute("src",elem.img)
+            var brandname=document.createElement('h2');
+            brandname.innerText=elem.brand;
+            var productname=document.createElement('p');
             productname.innerText=elem.name;
-            var price=document.createElement('p');
-            price.innerText=elem.price
-            box.append(image,productname,price)
-            document.querySelector("body").append(box);
+            var catagory=document.createElement("h3");
+            catagory.innerText=elem.catagory;
+            var price=document.createElement("h2");
+            price.innerText=elem.price;
+            var btn=document.createElement('button');
+            btn.innerText="Delete";
+            btn.addEventListener("click",function(){
+            deletecart(elem.productID)
+            })
+            box.append(image,brandname,productname,catagory,price,btn)
+
+            document.querySelector("#products").append(box);
         })
+    }
+    display(cart);
+    function deletecart(id){
+        cart=cart.filter(function(elem){
+            return elem.productID != id;
+            localStorage.setItem("cartItem",JSON.stringify(cart));
+        })
+        display(cart)
+        
+        
     }
     
 

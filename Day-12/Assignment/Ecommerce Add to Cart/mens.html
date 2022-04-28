@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mens Data</title>
+    <title>Document</title>
     <style>
         #container{
             width: 95%; border: 0px solid green;display: grid;grid-template-columns: repeat(4,1fr);grid-template-rows: 4 auto;gap: 20px;
@@ -280,10 +280,8 @@
     },
   ];
     
+  localStorage.setItem("productData",JSON.stringify(mensData));
 
-  var productArr=JSON.parse(localStorage.getItem('cart')) || [];
-  display(mensData);
-  function display(mensData){
   mensData.forEach(function(elem){
         var box=document.createElement('div');
         var image=document.createElement("img");
@@ -294,17 +292,10 @@
         price.innerText=elem.price;
         var btn=document.createElement('button');
         btn.innerText="Add to Cart";
-        btn.addEventListener('click',function(){
-          addtocart(elem)
-        })
         box.append(image,productname,price,btn)
         document.querySelector("#container").append(box);
     })
-  }
-function addtocart(elem){
-  productArr.push(elem);
-  
-  localStorage.setItem("cart",JSON.stringify(productArr))
-  // console.log(Cart)
-}
+
+
+
 </script>

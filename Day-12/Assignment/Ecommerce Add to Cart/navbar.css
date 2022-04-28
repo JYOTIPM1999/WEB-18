@@ -1,0 +1,19 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#nav{
+    display: flex;height: 80px;width: 100%;
+}
+#logo{
+    width: 20%;
+}
+#text{
+    width: 50%;display: flex;justify-content: space-between;
+}
+#user{
+    width: 30%;display: flex;
+}
+#user>h2{
+    margin-left: 20px;
+}
