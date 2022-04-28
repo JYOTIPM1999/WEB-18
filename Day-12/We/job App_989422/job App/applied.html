@@ -15,10 +15,21 @@
       <div><a href="applied.html">Applied Jobs</a></div>
       <div><a href="bookmark.html">Bookmarks</a></div>
     </div>
-    <select id="sortNames" onchange="handleNamesort">
+    <select id="sortNames" onChange="handleNamesort()">
       <option value="none">Sort by Name</option>
       <option value="asc">Ascending</option>
       <option value="dsc">Descending</option>
+    </select>
+    <select id="sortSalary" onChange="handleSalarysort()">
+      <option value="none">Sort by Salary</option>
+      <option value="HTL">High to Low</option>
+      <option value="LTH">Low to High</option>
+    </select>
+    <select id="sortJob" onChange="handleJobsort()">
+      <option value="none">Sort by applied</option>
+      <option value="Backend">Backend</option>
+      <option value="Frontend">Frontend</option>
+      <option value="FSD">FSD</option>
     </select>
     <main>
       <table>
@@ -41,6 +52,31 @@
     //you need to code here
     var appliedJobList=JSON.parse(localStorage.getItem("jobList"));
 
+    function handleJobsort(){
+      var selected=document.querySelector("#sortJob").value;
+      var filtered=appliedJobList.filter(function(element){
+        return element.role==selected;
+      })
+      display(filtered)
+
+    }
+
+    function handleSalarysort(){
+      var selected=document.querySelector("#sortSalary").value;
+      if(selected=="HTL"){
+        appliedJobList.sort(function(a,b){
+          return b.salary-a.salary;
+      })
+      display(appliedJobList)
+      }
+      if(selected=="LTH"){
+      appliedJobList.sort(function(a,b){
+        return a.salary-b.salary;
+      })
+      display(appliedJobList)
+      }
+    }
+
     function handleNamesort(){
       var selected=document.querySelector("#sortNames").value;
       if(selected=="asc"){
@@ -54,8 +90,9 @@
           }
           return 0;
         });
+        // console.log(appliedJobList)
         display(appliedJobList);
-      }if(selected=="dsc"){
+      }else if(selected=="dsc"){
         appliedJobList.sort(function(a,b){
           var x=a.name.toUpperCase();
           var y=b.name.toUpperCase();
@@ -67,13 +104,14 @@
           return 0;
         });
         display(appliedJobList);
+        // console.log(appliedJobList)
       }
     }
 
     var bookmarksArr=JSON.parse(localStorage.getItem("bookmarks")) || [];
     display(appliedJobList);
     function display(appliedJobList){
-      document.querySelector("tbody").innerHTML="";
+      document.querySelector("#body").innerHTML="";
       appliedJobList.forEach(function(elem){
         var tr=document.createElement('tr');
         var td1=document.createElement('td');

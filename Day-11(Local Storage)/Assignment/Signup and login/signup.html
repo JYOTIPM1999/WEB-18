@@ -16,10 +16,10 @@
         margin: auto;width: 40%;padding: 20px;border-radius: 10px;
         box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
     }
-    #masai{
+    #form{
         padding: 20px;
     }
-    #masai>input{
+    #form>input{
         display: block;
         width: 90%;padding: 10px;margin: auto;margin-top: 20px;
     }
@@ -29,7 +29,7 @@
     <img src="https://sso.masaischool.com/brand_dark.svg" alt="">
     <div id="container">
         <h1>Sign Up</h1>
-        <form id="masai" >
+        <form id="form" >
             <input id="name" type="text" placeholder="Enter your full name">
             <input id="email" type="email" placeholder="Enter email">
             <input id="password" type="password"  placeholder="Enter password">
@@ -39,17 +39,15 @@
 </body>
 </html>
 <script>
-    document.querySelector("#masai").addEventListener("submit",func)
-    var sigbupdataarr=JSON.parse(localStorage.getItem("loginId")) || [];
+    document.querySelector("#form").addEventListener("submit",func)
     function func(){
         event.preventDefault();
         var dataobj={
-            name:masai.name.value,
-            email:masai.email.value,
-            password:masai.password.value,
+            name:form.name.value,
+            email:form.email.value,
+            password:form.password.value,
         }
-        sigbupdataarr.push(dataobj)
-        localStorage.setItem("loginId",JSON.stringify(sigbupdataarr));
+        localStorage.setItem("loginId",JSON.stringify(dataobj));
         window.location.href="login.html";
     };
 </script>
