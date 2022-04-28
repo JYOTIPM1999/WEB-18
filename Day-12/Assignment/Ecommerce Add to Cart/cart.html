@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <style>
+        div{
+            display: grid;grid-template-columns: 1 auto;margin: auto;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cart</h1>
+</body>
+</html>
+<script>
+    var cart=JSON.parse(localStorage.getItem('cart')) || [];
+
+    display(cart);
+    function display(cart){
+        cart.forEach(function(elem){
+            var box=document.createElement('div')
+
+            var image=document.createElement('img');
+            image.setAttribute("src",elem.image_url)
+            var productname=document.createElement('h5');
+            productname.innerText=elem.name;
+            var price=document.createElement('p');
+            price.innerText=elem.price
+            box.append(image,productname,price)
+            document.querySelector("body").append(box);
+        })
+    }
+    
+
+</script>

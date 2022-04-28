@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="Gender" id="gender">
+        <option value="">Select gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select>
+    <input type="number" id="dob"/>
+    <button onclick="validation()">Submit</button>
+</body>
+</html>
+    
+<script>
+    function validation(){
+        var age=document.getElementById('dob').value
+        var gen=document.getElementById('gender').value
+        if(age>2002 && gen=="Male")
+        {
+            alert("Not valid for Marriage")
+        }
+        else if(age>2004 && gen=="Female")
+        {
+            alert("Not valid for Marriage")
+        }
+        else if(age<=2002 && gen=="Male")
+        {
+            alert("Valid for Marriage")
+        }
+        else if(age<=2004 && gen=="Female")
+        {
+            alert("Valid for Marriage")
+        }
+    }
+</script>

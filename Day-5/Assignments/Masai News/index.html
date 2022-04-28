@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+    <style>
+        #main{
+            width: 100%;height: 500px;border: 0px solid black;margin: auto;background-color: rgb(207, 231, 240);padding: 10px 0px;
+        }
+        h1{
+            text-align: center;
+        }
+        .align{
+            width:65% ;border: 0px solid red;height: 70%;display: flex;margin: auto;justify-content: space-between;
+        }
+        .align>div{
+            width: 30%;height: 100%;border: 0px solid blue;border-radius: 10px;background-color: white;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+        button{
+            display: block;margin: auto;margin-top: 25px;background-color: rgb(207, 231, 240);color: rgb(179, 37, 105);
+            border: 1px solid rgb(179, 37, 105);border-radius: 5px;padding: 10px 10px 10px 10px;
+        }
+        .align>div>img{
+            width: 90%;height: 50%;border-radius: 10px;margin-bottom: -10px;
+        }
+        img+p{
+            color: #3470e4;margin-bottom: -5px;
+        }
+        p{
+            color: grey;margin-bottom: 5px;
+        }
+        h3,img+p,p{
+            width: 90%;margin-left: 20px;
+        }
+        .align>div:hover{
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;height: 101%;
+        }
+    </style>
+    <style>
+        #second{
+            height: 100px;border: 0px solid black;width: 70%;display: flex;justify-content: space-between;margin: auto;
+        }
+        #second>div{
+            height: 100%;width: 33%;border: 0px solid red;border-radius: 5px;
+        }
+        img{
+            width: 100%;height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h1>Masai In The News</h1>
+        <div class="align">
+            <div>
+                <img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/ET_3754cc10ec.png" alt="Economic Times">
+                <p>21 Dec 2021</p>
+                <h3> Edtech startup Masai School acquires data analytics firm Prepleaf for $1 million.</h3>
+                <p>With their latest acquisition, Masai moves one step closer to becoming...</p>
+            </div>
+            <div>
+                <img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/money_Control_c3e25f5ceb.png" alt="Money Control">
+                <p>26 Oct 2021</p>
+                <h3> Kunal Shah, Vijay Shekhar Sharma, Amrish Rau among 21 angel investors in Masai School.</h3>
+                <p>Masai School is aiming to expand to 20 smaller cities by March 2022 and...</p>
+            </div>
+            <div>
+                <img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/vccircle_6ef779c958.png" alt="Vccircle">
+                <p>18 Aug 2020</p>
+                <h3> Unitus Ventures leads pre-Series A funding for coding-focussed Masai School.</h3>
+                <p>Software coding platform Masai School has raised $2.5 million (Rs 18.6 crore) i...</p>
+            </div>
+        </div>
+        <button><b>SEE MORE ></b></button>  
+    </div>
+    <h1>Our Investors, Who Believed In Us</h1>
+    <div id="second">
+        <div>
+            <img src="https://www.masaischool.com/img/our-investors/unitus.svg" alt="">
+        </div>
+        <div>
+            <img src="https://www.masaischool.com/img/our-investors/omidyar.svg" alt="">
+        </div>
+        <div>
+            <img src="https://www.masaischool.com/img/our-investors/indiaQuotient.svg" alt="">
+        </div>
+    </div>
+</body>
+</html>

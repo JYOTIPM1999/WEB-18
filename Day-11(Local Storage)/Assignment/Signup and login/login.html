@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        body>img{
+            display: block;margin: auto;
+        }
+        #container{
+            margin: auto;width: 40%;padding: 20px;border-radius: 10px;
+            box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+        }
+        #masai{
+            padding: 20px;
+        }
+        #masai>input{
+            display: block;
+            width: 90%;padding: 10px;margin: auto;margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://sso.masaischool.com/brand_dark.svg" alt="">
+    <div id="container">
+        <h1>Sign Up</h1>
+        <form id="masai" >
+            <input id="email" type="email" placeholder="Enter email">
+            <input id="password" type="password"  placeholder="Enter password">
+            <input id="sub" type="submit" value="Log in">
+        </form>
+    </div>
+</body>
+</html>
+<script>
+    var loginDetails=JSON.parse(localStorage.getItem("loginId"));
+    // display(loginDetails);
+    document.querySelector("#masai").addEventListener("submit",loginFunc)
+    function loginFunc(){
+        var loginObj={
+            email:masai.email.value,
+            password:masai.email.value,
+        }
+        function display(loginDetails){
+            loginDetails.forEach(function(elem){
+                if(loginObj.email== elem.email && loginObj.password == elem.password){
+                    alert("We got it")
+                }
+                else if(loginObj.email!= elem.email){
+                    alert("Wrong Input")
+                }
+            })            
+        }
+        display(loginDetails);  
+    }
+    
+</script>

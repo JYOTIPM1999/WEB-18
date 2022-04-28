@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        h1{
+            text-align: center;font-size:  60px;color: burlywood;
+        }
+        #mainbox{
+            display: flex;width: 80%;justify-content: space-evenly;margin: auto;
+        }
+        #container{
+            height: 450px;width: 25%;box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;margin: auto;padding: 40px;border-radius: 10px;
+        }
+        #container2{
+            height: 450px;width: 25%;box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;margin: auto;padding: 40px;border-radius: 10px;
+        }
+        #head{
+            height: 60px;width: 100%;border-radius: 10px;margin: auto;box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+            display: flex;justify-content: center;align-items: center;font-size: 30px
+        }
+        #head:hover{
+            background-color:rgb(62, 216, 129);color: black;
+        }
+        #keyboard{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 80px);
+            gap:10px;
+            margin-top: 20px;
+        }
+        #keyboard>div{
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+        .black{
+            background-color: black;color: white;
+        }
+        .red{
+            background-color: red;color: white;
+        }
+        #keyboard>div:hover{
+            background-color: rgb(62, 216, 129);color: black;
+        }
+        button{
+            display: block;margin: auto;padding: 20px;margin-top: 30px;border-radius: 10px;
+        }
+        p{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exponent Calculator</h1>
+    <button>Click here to find the exponent!</button>
+    <p></p>
+    <div id="mainbox">
+        <div id="container">
+            <div id="head"></div>
+            <div id="keyboard">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div class="black">+</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div class="black">-</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+                <div class="black">*</div>
+                <div class="red">C</div>
+                <div>0</div>
+                <div class="black">=</div>
+                <div class="black">/</div>
+            </div>
+        </div>
+        <div id="container2">
+            <div id="head2"></div>
+            <div id="keyboard">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div class="black">+</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div class="black">-</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+                <div class="black">*</div>
+                <div class="red">C</div>
+                <div>0</div>
+                <div class="black">=</div>
+                <div class="black">/</div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
+
+<script>
+    var keys = document.querySelectorAll("#keyboard>div");
+    var bag = "";
+
+  for (var i = 0; i < keys.length; i++) {
+    keys[i].addEventListener("click", myCalculator);
+  }
+  function myCalculator() {
+    var targetNumber = event.target.innerText;
+
+    if (targetNumber == "C") {
+      bag = "";
+      document.querySelector("#head").innerText = "";
+    } else {
+      bag = bag + targetNumber;
+      document.querySelector("#head").innerText = bag;
+    }
+  }
+  function myCalculator() {
+    var targetNumber = event.target.innerText;
+
+    if (targetNumber == "C") {
+      bag = "";
+      document.querySelector("#head2").innerText = "";
+    } else {
+      bag = bag + targetNumber;
+      document.querySelector("#head2").innerText = bag;
+    }
+  }
+  document.querySelector("button").addEventListener("click",myExponent)
+  function myExponent(){
+    document.querySelector("#head").innerText * document.querySelector("#head2").innerText;
+  }
+</script>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      
+      <title>Document</title>
+
+      <style>
+            /* Descendant selector -> space */
+
+            /* syntax -> selector1 selector2 selector3 .......... */
+
+            div p{
+                  /* it will select all p's which are descendants of div */
+                  background-color:red
+            }
+
+            div h1{
+                  background-color:yellow
+            }
+
+            div h5{
+                  /* select all h5's which are descendants of div */
+                  background-color:pink
+            }
+
+            #container p{
+                  /* it will select all p's which are descendants of #container */
+                  background-color:teal
+            }
+
+            .shakil h5{
+                  background-color:orange
+            }
+
+      </style>
+</head>
+<body>
+      <div>
+            <p>P1</p>
+            <h1>I am heading 1</h1>
+            <h5>I am heading 5</h5>
+            
+      </div>
+
+      <p>P2</p>
+
+      <div id="container">
+            <p>P3</p>
+            <div>
+                  <div>
+                        <div>
+                              <p>P4</p>
+                              <div class="shakil">
+                                    <h5>h5.2</h5>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+      </div>
+
+      
+</body>
+</html>

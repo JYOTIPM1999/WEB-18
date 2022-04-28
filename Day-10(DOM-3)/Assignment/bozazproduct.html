@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bozaz Poduct</title>
+    <style>
+        *{
+            margin: 0px;padding: 0px;            
+        }
+        .container{
+            width: 90%;            
+        }
+        h1{
+            text-align: center;
+        }
+        body{
+            background-color: rgb(222,221,221);
+        }
+        .container>div:nth-child(1){
+            width: 80%;margin: auto;background-color: white;padding: 20px 0px;
+        }
+        #products{
+            width: 100%;display: flex;flex-wrap: wrap;justify-content: space-between;margin: auto;
+        }
+        #products>div{
+            
+            width: 18%;background-color: white;margin-top: 20px;
+        }
+        input,select{
+            display: block;width: 80%;margin: 10px auto;padding: 1% 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <form id="form">
+                <h1>Add Some Products</h1>
+                <select name="" id="catagory">
+                    <option value="electronics">Electronics</option>
+                    <option value="furniture">Furniture</option>
+                    <option value="home appliances">Home Appliances</option>
+                    <option value="books">Books</option>
+                </select><br/>
+                <input id="title" type="text">
+                <input id="desc" type="text">
+                <input id="price" type="number">
+                <input type="submit"/>
+            </form>
+        </div>
+        <div id="products">
+        </div>
+    </div>
+</body>
+<script>
+    //Dom varianbles
+    var forms=document.querySelector('#form');
+    var product=document.querySelector('#products');
+    //all the functions
+    function display(data){
+        var parent=document.createElement('div')
+        var heading=document.createElement('h2');
+        heading.innerText=data.catagory;
+        var title=document.createElement("p")
+        title.innerText=data.title;
+        var desc=document.createElement("p")
+        desc.innerText=data.desc;
+        var price=document.createElement("p")
+        price.innerText=data.price;
+        var btn=document.createElement('buttom');
+        btn.textContent="DELETE"
+        btn.addEventListener("click",function(event){
+            event.target.parentNode.remove();
+        })
+        parent.append(heading,title,desc,price,btn)
+        product.append(parent);
+    }
+    form.addEventListener('submit',function(event){
+        event.preventDefault();
+        var data={
+            title:form.title.value,
+            desc:form.desc.value,
+            price:form.price.value,
+            catagory:form.catagory.value,
+        }
+        //passing argument data into display
+        display(data)
+    })
+</script>
+</html>

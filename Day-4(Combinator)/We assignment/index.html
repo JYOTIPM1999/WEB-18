@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        #heading{
+            width: 40%;height: auto;text-align: center;border: 0px solid saddlebrown;margin: auto;
+        }
+        #heading >h1{
+            font-size: 50px;padding: 0px 25px 0px 25px;          
+        }
+        #heading>p{
+            margin-top: -20px;font-size: 20px;line-height: 25px;color: grey;
+        }
+        #card{
+            height: 350px;width: 70%;border: 0px solid black;margin: auto;display: flex;margin-top: 80px;
+        }
+        #card >div{
+            height: 100%;width: 30%;border: 0px solid blue;margin: auto;text-align: center;box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        }
+        h2{
+            text-align: center;
+        }
+        #card >div:nth-child(1) > h1{
+            color: green;font-weight: bold;
+        }
+        #card >div:nth-child(2) > h1{
+            color: orange;font-weight: bold;
+        }
+        #card >div:nth-child(3) > h1{
+            color: rgb(52, 52, 194);font-weight: bold;
+        }
+        #card >div>h1+p{
+            font-style: italic;margin-top: -15px;
+        }
+        p+p{
+            padding: 0px 30px 0px 30px;line-height: 25px;color: grey;
+        }
+        button{
+            padding: 15px 40px 15px 40px;margin-top: 10px;border-radius: 10px;border: 2px solid rgb(52, 52, 194);color: rgb(52, 52, 194);
+            background-color: white;font-weight: bold;font-size: 15px;margin-top: 20px;margin-bottom: 40px;
+        }
+        button:hover{
+            color: white;background-color: rgb(52, 52, 194);
+        }
+
+    </style>
+</head>
+<body>
+    <div id="heading">
+        <h1>Choose a plan that right for your business</h1>
+        <p>We collect review from our users so you can  get an honest openion of what an experience with our websites are really like!</p>
+    </div>
+    <div id="card">
+        <div>
+            <h2>Starter Pack</h2>
+            <h1>Free</h1>
+            <p>Per month</p>
+            <p>We collect review from our users so you can  get an honest openion of what an experience with our websites.</p>
+            <button>Start Now</button>
+        </div>
+        <div>
+            <h2>Business Plan</h2>
+            <h1>$39.00</h1>
+            <p>Per month</p>
+            <p>We collect review from our users so you can  get an honest openion of what an experience with our websites.</p>
+            <button>Start Now</button>
+        </div>
+        <div>
+            <h2>Premium Plan</h2>
+            <h1>$59.00</h1>
+            <p>Per month</p>
+            <p>We collect review from our users so you can  get an honest openion of what an experience with our websites.</p>
+            <button>Start Now</button>
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #nav{
+            height: 80px;width: 100%;background-color: yellow;font-size: 50px;margin-bottom: 20px;
+        }
+        #container{
+            height: 400px;width: 100%;display: grid;grid-template-columns: repeat(4,1fr);grid-template-rows: 350px;
+            gap: 20px;
+        }
+        #container>div{
+            display: flex;justify-content: left;font-size: 30px;
+        }
+        #container>div:nth-child(1){
+            background-color: red;
+        }
+        #container>div:nth-child(2){
+            background-color: green;
+        }
+        #container>div:nth-child(3){
+            background-color:blue ;
+        }
+        #container>div:nth-child(4){
+            background-color: grey;
+        }
+
+        @media all and (min-width: 451px) and (max-width: 750px) {
+            #container{
+                grid-template-columns: repeat(2,1fr);grid-template-rows: repeat(2,350px);
+            }
+        }
+        @media all and (min-width: 100px) and (max-width: 450px) {
+            #container{
+                grid-template-columns: repeat(1,1fr);grid-template-rows: repeat(4,150px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="nav">Navigation</div>
+    <div id="container">
+        <div>BOX 1</div>
+        <div>BOX 2</div>
+        <div>BOX 3</div>
+        <div>BOX 4</div>
+    </div>
+</body>
+</html>

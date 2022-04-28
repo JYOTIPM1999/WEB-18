@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <style>
+            /* general sibling - + /
+            /* syntax : selector1 + selector2 + selector3~...... */
+           .para + p{
+                 /* select p which is adjacent sibling to h1 */
+                 background-color:red
+           }
+
+           div+h3{
+                 background-color:yellow
+           }
+      </style>
+</head>
+<body>
+      <div>
+            <h1>I am heading 1</h1>
+            <p class="para">P1</p>
+            <p>P2</p>
+            <p>P3</p>
+            <h2>I am heading 2</h2>
+      </div>
+      <h3>I am heading 3</h3>
+</body>
+</html>
+
+<!-- 1. p1 p2 P3
+2. p2 p3 
+3. p3 -->

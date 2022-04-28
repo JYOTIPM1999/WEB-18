@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <style>
+      #container {
+        display: flex;
+        border: 5px solid black;
+        /* flex-direction:row/row-reverse/column/column-reverse */
+        /* flex-wrap:wrap; */
+        /* justify-content: space-evenly/space-around/space-between/flex-end/cebter; */
+        height: 500px;
+        /* align-items:stretch/flex-end/flex-start/center; */
+        /* justify-content -- horizontal alignment
+        align-items-- vertical alignment */
+        justify-content: center;
+        align-items: center;
+      }
+
+      #container > div {
+        padding: 10px;
+      }
+
+      #container > div:nth-child(1) {
+        background-color: red;
+      }
+
+      #container > div:nth-child(2) {
+        background-color: rgb(27, 102, 27);
+      }
+      #container > div:nth-child(3) {
+        background-color: rgb(20, 37, 95);
+      }
+      #container > div:nth-child(4) {
+        background-color: rgb(104, 61, 139);
+      }
+      #container > div:nth-child(5) {
+        background-color: rgb(83, 12, 74);
+      }
+      #container > div:nth-child(6) {
+        background-color: green;
+      }
+      #container > div:nth-child(7) {
+        background-color: teal;
+      }
+      #container > div:nth-child(8) {
+        background-color: orange;
+      }
+      #container > div:nth-child(9) {
+        background-color: red;
+      }
+
+      
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div>Item 1</div>
+      <div>Item 2</div>
+      <div>Item 3</div>
+      <div>Item 4</div>
+      <div>Item 5</div>
+      <div>Item 6</div>
+      <div>Item 7</div>
+      <div>Item 8</div>
+      <div>Item 9</div>
+    </div>
+
+  </body>
+</html>
+
+<!-- parent
+diplay:flex;
+flex-direction
+flex-wrap
+justify-content
+align-items
+
+
+child
+
+order
+flex-shrink
+flex-basis
+
+-->

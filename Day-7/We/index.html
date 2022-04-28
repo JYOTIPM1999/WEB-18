@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body>h1{
+            font-size: 50px;text-align: center;width: 40%;margin: auto;        
+        }
+        body>p{
+            font-size: 20px;line-height: 25px;color: grey;text-align: center;width: 45%;margin: auto;margin-top: 20px;
+        }
+        #card{
+            height: auto;width: 70%;margin: auto;display: grid;grid-template-columns: repeat(3,1fr);
+            grid-template-rows: 350px;margin-top: 80px;
+        }
+        #card >div{
+            height: 100%;width: 80%;border: 0px solid blue;margin: auto;text-align: center;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;text-align: center;padding: 20px;border-radius: 10px;
+        }
+
+        #card >div:nth-child(1) > h1{
+            color: green;font-weight: bold;
+        }
+        #card >div:nth-child(2) > h1{
+            color: orange;font-weight: bold;
+        }
+        #card >div:nth-child(3) > h1{
+            color: rgb(52, 52, 194);font-weight: bold;
+        }
+        #card>div>h2{
+            font-weight: bold;font-family: sans-serif;
+        }
+        #card>div>h1+p{
+            font-style:italic;color: grey;font-weight: bold;
+        }
+        #card>div>p+p{
+            color: grey;line-height: 25px;font-weight: bold;
+        }
+        button{
+            padding: 15px 40px 15px 40px;margin-top: 10px;border-radius: 10px;border: 2px solid rgb(52, 52, 194);
+            color: rgb(52, 52, 194);
+            background-color: white;font-weight: bold;font-size: 15px;margin-top: 20px;margin-bottom: 40px;
+        }
+        button:hover{
+            color: white;background-color: rgb(52, 52, 194);
+        }
+        @media all and (min-width: 451px)and ( max-width:750px){
+            #card{
+            grid-template-columns: repeat(2,1fr);width: 100%;
+            grid-template-rows: repeat(2,350px);gap: 50px;
+            }
+            #card>div{
+                width: 95%;
+            }          
+        }
+        @media all and (min-width: 100px)and ( max-width:450px){
+            #card{
+            grid-template-columns: repeat(1,1fr);width: 100%;
+            grid-template-rows: repeat(3,350px);gap: 50px;
+            }
+            #card>div{
+                margin-bottom: 20px;
+            }
+            body>h1{
+            font-size: 30px;text-align: center;width: 90%;margin: auto;        
+            }
+            body>p{
+            font-size: 15px;width: 90%;margin: auto;margin-bottom: -30px;
+            }           
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Choose a plan that right for your business</h1>
+    <p>We collect review from our users so you can  get an honest openion of what an experience with our websites are really like!</p>
+    <div id="card">
+        <div>
+            <h2>Starter Pack</h2>
+            <h1>Free</h1>
+            <p>Per month</p>
+            <p>We collect review from our users so you can  get an honest openion of what an experience with our websites.</p>
+            <button>Start Now</button>
+        </div>
+        <div>
+            <h2>Business Plan</h2>
+            <h1>$39.00</h1>
+            <p>Per month</p>
+            <p>We collect review from our users so you can  get an honest openion of what an experience with our websites.</p>
+            <button>Start Now</button>
+        </div>
+        <div>
+            <h2>Premium Plan</h2>
+            <h1>$59.00</h1>
+            <p>Per month</p>
+            <p>We collect review from our users so you can  get an honest openion of what an experience with our websites.</p>
+            <button>Start Now</button>
+        </div>
+    </div>
+    
+</body>
+</html>

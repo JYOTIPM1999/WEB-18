@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Database</title>
+    <link rel="stylesheet" href="commonStyles.css" />
+  </head>
+
+  <body>
+
+    <div id="links">
+      <div><a href="index.html">Home</a></div>
+      <div><a href="applied.html">Applied Jobs</a></div>
+      <div><a href="bookmark.html">Bookmarks</a></div>
+    </div>
+    <select id="sortNames" onchange="handleNamesort">
+      <option value="none">Sort by Name</option>
+      <option value="asc">Ascending</option>
+      <option value="dsc">Descending</option>
+    </select>
+    <main>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Job applied</th>
+            <th>Salary expected</th>
+            <th>Add to bookmark</th>
+          </tr>
+        </thead>
+        <tbody id="body">
+          <!-- Append your output to tbody -->
+        </tbody>
+      </table>
+    </main>
+  </body>
+  <script>
+    //you need to code here
+    var appliedJobList=JSON.parse(localStorage.getItem("jobList"));
+
+    function handleNamesort(){
+      var selected=document.querySelector("#sortNames").value;
+      if(selected=="asc"){
+        appliedJobList.sort(function(a,b){
+          var x=a.name.toUpperCase();
+          var y=b.name.toUpperCase();
+          if(x>y){
+            return 1;
+          }if(x<y){
+            return -1;
+          }
+          return 0;
+        });
+        display(appliedJobList);
+      }if(selected=="dsc"){
+        appliedJobList.sort(function(a,b){
+          var x=a.name.toUpperCase();
+          var y=b.name.toUpperCase();
+          if(x<y){
+            return 1;
+          }if(x>y){
+            return -1;
+          }
+          return 0;
+        });
+        display(appliedJobList);
+      }
+    }
+
+    var bookmarksArr=JSON.parse(localStorage.getItem("bookmarks")) || [];
+    display(appliedJobList);
+    function display(appliedJobList){
+      document.querySelector("tbody").innerHTML="";
+      appliedJobList.forEach(function(elem){
+        var tr=document.createElement('tr');
+        var td1=document.createElement('td');
+        td1.innerText=elem.name;
+        var td2=document.createElement('td');
+        td2.innerText=elem.email;
+        var td3=document.createElement('td');
+        td3.innerText=elem.role;
+        var td4=document.createElement('td');
+        td4.innerText=elem.salary;
+        var td5=document.createElement('td');
+        td5.innerText="Bookmarks";
+        td5.style.cursor="pointer"
+        td5.addEventListener('click',function(){
+          bookmarksFunc(elem);
+        });
+        tr.append(td1,td2,td3,td4,td5);
+        document.querySelector("#body").append(tr);
+
+      })
+    }
+    function bookmarksFunc(elem){
+        bookmarksArr.push(elem);
+        localStorage.setItem("bookmarks",JSON.stringify(bookmarksArr));
+    }
+  </script>
+</html>

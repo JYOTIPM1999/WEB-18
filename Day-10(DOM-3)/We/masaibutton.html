@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            margin: auto;width: 80%;
+        }
+        button{
+            margin: 5px;padding: 10px 20px;border-radius: 5px;border: 0px;font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    var btnObj=[
+    { name: "Primary", color: "white", bgColor: "blue" },
+    { name: "Secondary", color: "white", bgColor: "grey" },
+    { name: "Danger", color: "white", bgColor: "red" },
+    { name: "Warning", color: "black", bgColor: "yellow" },
+    { name: "Info", color: "white", bgColor: "cyan" },
+    { name: "Light", color: "black", bgColor: "white" },
+    { name: "Success", color: "white", bgColor: "green" },
+    { name: "Dark", color: "white", bgColor: "black" },
+    { name: "Link", color: "blue", bgColor: "white" },
+];
+var main=document.createElement('div')
+document.querySelector('body').append(main)
+
+btnObj.forEach(function(elem){
+    var box=document.createElement('button');
+    box.innerText=elem.name
+    box.style.backgroundColor=elem.bgColor
+    box.style.color=elem.color
+    document.querySelector('div').append(box);
+});
+</script>

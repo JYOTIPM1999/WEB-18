@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 200px);
+        gap: 20px;
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      #container > div {
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        padding: 20px;
+      }
+
+      #container > div > div {
+        display: flex;
+        justify-content: space-between;
+      }
+      #container > div > div + p {
+        font-size: 20px;
+        line-height: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div>
+        <div>
+          <p>Cappuccino</p>
+          <p>$49</p>
+        </div>
+        <p>
+          Usage of the Internet is becoming more common due to rapid advance
+        </p>
+      </div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </body>
+</html>

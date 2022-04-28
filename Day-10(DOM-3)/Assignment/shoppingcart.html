@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            width: 90%;display: grid;grid-template-columns: repeat(4, 1fr);grid-template-rows: repeat(4, auto);
+            margin: auto;gap: 20px;padding: 20px;
+        }
+        #container>div{
+            position: relative;
+        }
+        p{
+            position: absolute; left: 40%;bottom: 10px;text-decoration: line-through;color: grey;font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+</body>
+</html>
+<script>
+    var data = [
+    {imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi1.jpg.pagespeed.ic.mkSk-Af1ka.webp",name:"LATEST MEN’S SNEAKER",
+    price:"$25.00",strikedOffPrice:"$95.00"},
+    {imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi2.jpg.pagespeed.ic.uBrpABaJqp.webp",name:"LATEST MEN’S SNEAKER",
+    price:"$35.00",strikedOffPrice:"$100.00"},
+    {imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi3.jpg.pagespeed.ic.iO_cFEPy2K.webp",name:"LATEST MEN’S SNEAKER",
+    price:"$35.00",strikedOffPrice:"$100.00"},
+    {imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi4.jpg.pagespeed.ic.kmiQW8I5wx.webp",name:"LATEST MEN’S SNEAKER",
+    price:"$35.00",strikedOffPrice:"$100.00"}
+]
+data.forEach(function(elem) {
+    var box=document.createElement('div')
+    box.style.boxShadow="rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
+    var pic=document.createElement('img')
+    pic.setAttribute('src',elem.imgUrl)
+    pic.style.width="100%"
+    var productName=document.createElement("h3")
+    productName.innerText=elem.name
+    productName.style.color="grey"
+    productName.style.marginLeft="20px"
+    var pricing=document.createElement('h2')
+    pricing.innerText=elem.price;
+    pricing.style.padding="0px 20px"
+    var strikeprice=document.createElement('p')
+    strikeprice.innerText=elem.strikedOffPrice;
+    strikeprice.style.padding="0px 20px"
+    box.append(pic,productName,pricing,strikeprice);
+    document.querySelector("#container").append(box);
+});
+</script>

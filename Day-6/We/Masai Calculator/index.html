@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;font-size:  60px;color: teal;
+        }
+        #container{
+            height: 450px;width: 25%;box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;margin: auto;padding: 40px;
+        }
+        #head{
+            height: 60px;width: 90%;border-radius: 10px;margin: auto;box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        }
+        #head:hover{
+            background-color:rgb(62, 216, 129);color: black;
+        }
+        #keyboard{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 80px);
+            gap:10px;
+            margin-top: 20px;
+        }
+        #keyboard>div{
+            box-shadow:rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+        .black{
+            background-color: black;color: white;
+        }
+        .red{
+            background-color: red;color: white;
+        }
+        #keyboard>div:hover{
+            background-color: rgb(62, 216, 129);color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Masai Calculator</h1>
+    <div id="container">
+        <div id="head"></div>
+        <div id="keyboard">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div class="black">+</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div class="black">-</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div class="black">X</div>
+            <div class="red">C</div>
+            <div>0</div>
+            <div class="black">=</div>
+            <div class="black">/</div>
+        </div>
+    </div>
+</body>
+</html>
